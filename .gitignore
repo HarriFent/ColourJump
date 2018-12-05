@@ -1,0 +1,43 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+.vs/ColourJump/v15/.suo
+.vs/ColourJump/v15/Browse.VC.db
+.vs/ColourJump/v15/Browse.VC.opendb
+.vs/ColourJump/v15/ipch/AutoPCH/1ed44f37f44d8207/VIEW.ipch
+.vs/ColourJump/v15/ipch/AutoPCH/27aa277239dc0439/MAIN.ipch
+.vs/ColourJump/v15/ipch/AutoPCH/308cb48ee2c42054/BUTTON.ipch
+.vs/ColourJump/v15/ipch/AutoPCH/3a3e7ef1003dcf46/CONTROLLER.ipch
+.vs/ColourJump/v15/ipch/AutoPCH/471af8522e6b9efb/BLOCK.ipch
+.vs/ColourJump/v15/ipch/AutoPCH/b51875330c0200f1/EASYGRAPHICS.ipch
+.vs/ColourJump/v15/ipch/AutoPCH/ed79a9444b0276d5/MODEL.ipch
+.vs/ColourJump/v15/ipch/AutoPCH/fcb30427662c8621/PLAYER.ipch

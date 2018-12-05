@@ -1,0 +1,3 @@
+﻿  Controller.cpp
+c:\users\harry\documents\computer science course\projects\colourjump\colourjump\controller.cpp(20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  ColourJump.vcxproj -> C:\Users\harry\Documents\Computer Science Course\Projects\ColourJump\Debug\ColourJump.exe
