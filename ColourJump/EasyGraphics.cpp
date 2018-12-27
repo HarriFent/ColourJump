@@ -92,7 +92,7 @@ DWORD WINAPI WindowThread(LPVOID lpParameter)
   classname.hCursor=LoadCursor(NULL, IDC_ARROW);
   classname.hbrBackground=::GetSysColorBrush(COLOR_3DFACE);
   classname.lpszMenuName=NULL;
-  classname.lpszClassName=L"EasyGraphics";
+  classname.lpszClassName=L"ColourJump";
   classname.hIconSm=LoadIcon(NULL, IDI_WINLOGO);
   RegisterClassEx(&classname);
 
@@ -100,7 +100,7 @@ DWORD WINAPI WindowThread(LPVOID lpParameter)
   int offy=(::GetSystemMetrics(SM_CYSCREEN)-info->height)/2;
 
   // Create the window using the definition provided above
-  CreateWindowEx(NULL, L"EasyGraphics", L"EasyGraphics", WS_CAPTION|WS_SYSMENU|WS_MINIMIZEBOX|WS_VISIBLE, offx, offy, info->width, info->height, NULL, NULL, info->hInstance, info->window);
+  CreateWindowEx(NULL, L"ColourJump", L"Colour Jump", WS_CAPTION|WS_SYSMENU|WS_MINIMIZEBOX|WS_VISIBLE, offx, offy, info->width, info->height, NULL, NULL, info->hInstance, info->window);
 
   // Set the event-based message system up
   MSG msg;

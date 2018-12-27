@@ -2,14 +2,13 @@
 #include "EasyGraphics.h"
 #include <iomanip>
 
-const int SCREENWIDTH = 1024, SCREENHIGHT = 768;
-
 View::View(HINSTANCE hInstance)
 {
 	setImmediateDrawMode(false);
 	create(hInstance, SCREENWIDTH, SCREENHIGHT, 40, false);
 	gameState = GAME;
 	setTimer(1,1);
+	resetCursorPos();
 	waitForClose();
 }
 
@@ -39,9 +38,9 @@ void View::onDraw()
 		model.player.draw(this);
 
 		//draw blocks
-		for (std::vector<Block>::iterator it = model.blocks.begin(); it != model.blocks.end(); ++it)
+		for (Block b : model.blocks)
 		{
-			(*it).draw(this);
+			b.draw(this);
 		}
 		break;
 
@@ -56,14 +55,36 @@ void View::onDraw()
 
 void View::onMouseMove(UINT nFlags, int x, int y)
 {
-	controller.SetMousePos(x, 650);
+	controller.SetMousePos(x, y);
+	resetCursorPos();
 	EasyGraphics::onMouseMove(nFlags, x, y);
+}
+
+void View::resetCursorPos() 
+{
+	POINT cursorPos;
+	HWND handle = FindWindowA("ColourJump", "Colour Jump");
+	cursorPos.x = SCREENWIDTH / 2;
+	cursorPos.y = SCREENHIGHT / 2;
+	ClientToScreen(handle, &cursorPos);
+	SetCursorPos(cursorPos.x, cursorPos.y);
 }
 
 void View::onLButtonDown(UINT nFlags, int x, int y)
 {
-	model.player.setVel(model.player.getVelX(),-16);
-	model.player.setGrounded(false);
+	if (model.player.getGrounded())
+	{
+		model.player.setVel(model.player.getVelX(), -16);
+		model.player.setGrounded(false);
+	}
+}
+
+void View::onKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	if (nChar == 27) {
+		exit(0);
+	}
+	EasyGraphics::onKeyDown(nChar, nRepCnt, nFlags);
 }
 
 void View::onTimer(UINT nIDEvent)

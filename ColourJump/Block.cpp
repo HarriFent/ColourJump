@@ -4,12 +4,19 @@
 
 Block::Block()
 {
-	setDamage(0x00ffff00);
+	setDamage(0xffff00);
 }
 
 
 Block::~Block()
 {
+}
+
+void Block::incDamage() 
+{
+	if (dmg != 0xffffff) {
+		this->dmg++; 
+	}
 }
 
 void Block::draw(View * v)
