@@ -1,4 +1,6 @@
 #pragma once
+#include "Block.h"
+#include "Globals.h"
 
 class View;
 
@@ -21,7 +23,7 @@ public:
 	void setVel(double dx, double dy) { this->dx = dx; this->dy = dy; }
 	void setGrounded(bool grounded) { this->grounded = grounded; }
 
-	bool isColliding(int x, int y, int w, int h);
+	Side isColliding(Block b);
 
 private:
 	int x, y, r;

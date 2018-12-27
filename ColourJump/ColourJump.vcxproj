@@ -157,6 +157,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="EasyGraphics.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="View.h" />

@@ -41,3 +41,8 @@
 .vs/ColourJump/v15/ipch/AutoPCH/b51875330c0200f1/EASYGRAPHICS.ipch
 .vs/ColourJump/v15/ipch/AutoPCH/ed79a9444b0276d5/MODEL.ipch
 .vs/ColourJump/v15/ipch/AutoPCH/fcb30427662c8621/PLAYER.ipch
+*.tlog
+*.log
+*.idp
+*.pdb
+*.ilk

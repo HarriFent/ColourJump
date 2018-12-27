@@ -2,10 +2,12 @@
 #include "EasyGraphics.h"
 #include <iomanip>
 
+const int SCREENWIDTH = 1024, SCREENHIGHT = 768;
+
 View::View(HINSTANCE hInstance)
 {
 	setImmediateDrawMode(false);
-	create(hInstance, 1024, 768, 40, false);
+	create(hInstance, SCREENWIDTH, SCREENHIGHT, 40, false);
 	gameState = GAME;
 	setTimer(1,1);
 	waitForClose();
@@ -61,6 +63,7 @@ void View::onMouseMove(UINT nFlags, int x, int y)
 void View::onLButtonDown(UINT nFlags, int x, int y)
 {
 	model.player.setVel(model.player.getVelX(),-16);
+	model.player.setGrounded(false);
 }
 
 void View::onTimer(UINT nIDEvent)
@@ -68,14 +71,16 @@ void View::onTimer(UINT nIDEvent)
 	switch (gameState)
 	{
 	case MENU:
+		while (ShowCursor(true) >= 0);
 		controller.updateButton(model.playButton);
 		break;
 	case GAME:
+		while (ShowCursor(false) >= 0);
 		//Player controls
 		controller.updatePlayer(model.player);
 
 		//Block control
-		controller.updateBlock(model);
+		controller.updateBlocks(model);
 
 		//Score Control
 

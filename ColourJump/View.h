@@ -2,6 +2,7 @@
 #include "EasyGraphics.h"
 #include "Model.h"
 #include "Controller.h"
+#include "Globals.h"
 
 class View : public EasyGraphics
 {
@@ -13,7 +14,6 @@ public:
 	virtual void onLButtonDown(UINT nFlags, int x, int y);
 	virtual void onTimer(UINT nIDEvent);
 
-	enum GameState { MENU, GAME, GAMEOVER };
 
 private:
 	Model model;

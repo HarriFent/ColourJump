@@ -11,11 +11,11 @@ public:
 	~Controller();
 	int getX() { return this->xMouse; }
 	int getY() { return this->yMouse; }
-	void SetMousePos(int x, int y) { this->xMouse = x, this->yMouse = y; }
+	void SetMousePos(int x, int y);
 
 	void updatePlayer(Player& p);
 	void updateButton(Button& b);
-	void updateBlock(Model& m);
+	void updateBlocks(Model& m);
 
 private:
 	int xMouse, yMouse;

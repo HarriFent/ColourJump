@@ -25,7 +25,28 @@ void Player::draw(View * v)
 	v->drawCircle(x - (r / 6), y - (r / 6), r/2, true);
 }
 
-bool Player::isColliding(int bx, int by, int bw, int bh)
+Side Player::isColliding(Block b)
 {
-	return (x >= bx && x <= bx + bw && y + r >= by && y + r <= by + bh);
+	int bx, by, bw, bh;
+	b.getRect(bx, by, bw, bh);
+	if (x >= bx && x <= bx + bw && y + r >= by && y + r <= by + bh)
+	{
+		return BOTTOM;
+	}
+	else if (x >= bx && x <= bx + bw && y - r >= by && y - r <= by + bh)
+	{
+		return TOP;
+	}
+	else if (x - r >= bx && x - r <= bx + bw && y >= by && y <= by + bh)
+	{
+		return LEFT;
+	}
+	else if (x + r >= bx && x + r <= bx + bw && y >= by && y <= by + bh)
+	{
+		return RIGHT;
+	}
+	else
+	{
+		return NONE;
+	}
 }
